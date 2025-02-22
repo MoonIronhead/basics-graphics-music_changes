@@ -39,12 +39,35 @@ module hackathon_top
         // Exercise 1: Uncomment the code for a green rectangle
         // that overlaps red rectangle
 
+        if (key[0])
+        begin
+            if (x > 200 & x < 400 & y > 150 & y < 200)
+            green = 63;
+        end
+        else
+        begin
+            if (x > 120 & x < 320 & y > 70 & y < 120)
+            blue = 63;
+        end
 
         // 63 is the maximum 6-bit number, 6'b111111
+
+        // Excersice 2: Make a circle
+
+        begin
+            int radius = 50;
+            int center_x = 240;
+            int center_y = 136;
+
+            if ((x - center_x) * (x - center_x) + (y - center_y) * (y - center_y) <= radius*radius)
+                blue = 63;
+        end
 
         // Exercise 2: Add a blue rectangle
         // that overlaps both rectangles
 
-    end
+        if (x > 150 & x < 250 & y > 100 & y < 150)
+            blue = 31;
 
+    end
 endmodule
